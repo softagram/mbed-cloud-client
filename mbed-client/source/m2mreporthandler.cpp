@@ -88,6 +88,7 @@ void M2MReportHandler::set_value(float value)
         tr_debug("M2MReportHandler::set_value() - new value");
         set_notification_in_queue(true);
         if (check_threshold_values()) {
+            tr_debug("M2MReportHandler::set_value() - schedule report");
             schedule_report();
         } else {
             tr_debug("M2MReportHandler::set_value - value not in range");
@@ -298,6 +299,7 @@ bool M2MReportHandler::set_notification_attribute(const char* option,
             success = false;
         }
     }
+    tr_debug("M2MReportHandler::set_notification_attribute - success");
     return success;
 }
 

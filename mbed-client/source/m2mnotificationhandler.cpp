@@ -54,7 +54,7 @@ void M2MNotificationHandler::send_notification(M2MNsdlInterface *interface)
 {
     tr_debug("M2MNotificationHandler::send_notification");
     if (!_event.data.event_data) {
-        _event.data.event_data = 1;
+        _event.data.event_data = 2;
         _event.data.event_type = MBED_CLIENT_NOTIFICATION_HANDLER_EVENT;
         _event.data.data_ptr = interface;
 
@@ -66,6 +66,7 @@ void M2MNotificationHandler::send_notification(M2MNsdlInterface *interface)
 
 void M2MNotificationHandler::initialize_event()
 {
+    tr_debug("M2MNotificationHandler::initialize_event");
     _event.data.data_ptr = NULL;
     _event.data.event_data = 0;
     _event.data.event_id = 0;

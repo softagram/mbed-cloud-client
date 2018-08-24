@@ -260,6 +260,7 @@ bool M2MSecurity::set_resource_value(SecurityResource resource,
             success = res->set_value((const uint8_t*)value.c_str(),(uint32_t)value.length());
         }
     }
+    tr_debug("M2MSecurity::set_resource_value(instance_id %d)", (int)instance_id);
     return success;
 }
 
